@@ -1,18 +1,12 @@
-var map = array();
-
-var server = http.createServer(function(req, res) {
-	req.setEncoding("utf8");
-	req.content = '';
-	
- 	paths[req.url.pathname].apply(this, [req, res]);
-}).listen(80);
-
-'/publish': function(req, res){
-	req.addListener("data", function(chunk) {
-		req.content += chunk;
-	});
-			 
-	req.addListener("end", function() {
-	//parse req.content and do stuff with it
-	});
-}
+var server = require("http").createServer() 
+    server.addListener("request", function (req, res) { 
+      var postData = "" 
+      req.addListener("data", function (chunk) { postData += chunk }) 
+      req.addListener("end", function () { 
+        // now postData is full. 
+        var message = "You posted: "+postData 
+        res.writeHead(200, {"content-length":"message", 
+"content-type":"text/plain"}) 
+        res.end(message) 
+    }) 
+    server.listen(8000) 
