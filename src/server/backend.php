@@ -1,5 +1,5 @@
 <?php
-mysql_connect("localhost", "root", "");
+mysql_connect("localhost", "mindmap", "wamad");
 mysql_select_db("mindmap");
 
 if($_GET["all"]) {
