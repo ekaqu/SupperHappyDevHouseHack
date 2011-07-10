@@ -7,16 +7,11 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
     map.append(child);
     child.focus();
     child.on('keypress', function(press) {
-      if(press.keyCode == 13) {
+      if(press.keyCode == 13) { // if spacebar
         var text = child.get('value');
         // map.append('<div class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px">'+text+'</div>');
         child.remove();
 
-          Y.log(Y.QueryString.stringify({
-            word: text,
-            x: e.clientX,
-            y: e.clientY
-          }));
         // call backend
         Y.io('server/backend.php', {
           method: 'POST',
@@ -40,7 +35,6 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
   // fetch data and post it on the site
   var largestId = 0;
   function reloadAll() {
-    Y.log(largestId);
     Y.io('server/backend.php?from=' + largestId, {
       on : {
         complete: function(id, rsp, err) {
