@@ -3,14 +3,6 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
 
   // when user clicks, add an input
   map.on('click', function(e) {
-    Y.log(e.clientX);
-    Y.log(e.clientY);
-	var child = Y.Node.create('<div class="brian-map-element" class="textbox" style="left: '+e.clientX+'px; top: '+e.clientY+'px"><input type="text" /></div>');
-    //map.append('<div class="brian-map-element" class="textbox" style="left: '+e.clientX+'px; top: '+e.clientY+'px"><input type="text" /></div>');
-console.log(child);
-child.children.item(0).focus(true);
-    map.append(child);
-	
     var child = Y.Node.create('<input class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px" type="text"></input>');
     map.append(child);
     child.focus();
@@ -57,7 +49,6 @@ child.children.item(0).focus(true);
             Y.log(word);
             map.append('<div class="brian-map-element" style="left: '+word.x+'px; top: '+word.y+'px">'+word.word+'</div>');
             largestId = word.id;
-            Y.log(largestId);
           });
           Y.log(largestId);
         }
