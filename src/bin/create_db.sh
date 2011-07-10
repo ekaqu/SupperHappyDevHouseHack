@@ -7,3 +7,6 @@ bin=`cd "$bin">/dev/null; pwd`
 mysql -u $DB_USER -p"$DB_PASS" -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
 
 mysql -u $DB_USER -p"$DB_PASS" -D $DB_NAME -e "source $bin/../sql/create_table.sql"
+
+mysql -u $DB_USER -p"$DB_PASS" -D $DB_NAME -e "GRANT ALL ON $DB_NAME.* TO '$APP_USER'@'localhost' IDENTIFIED BY '$APP_PASS'"
+mysql -u $DB_USER -p"$DB_PASS" -D $DB_NAME -e "GRANT ALL ON $DB_NAME.* TO '$APP_USER'@'%' IDENTIFIED BY '$APP_PASS'"

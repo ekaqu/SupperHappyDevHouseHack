@@ -3,5 +3,6 @@ CREATE TABLE IF NOT EXISTS `word` (
  `word` varchar(30) DEFAULT NULL,
  `x` int(11) DEFAULT NULL,
  `y` int(11) DEFAULT NULL,
+ `created` TIMESTAMP DEFAULT NOW(),
  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1
