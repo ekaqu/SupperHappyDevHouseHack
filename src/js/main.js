@@ -10,7 +10,6 @@ YUI().use('node', function(Y) {
         map.append('<div class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px">'+text+'</div>');
         child.remove();
 
-		YUI.io.asyncRequest('POST', 'localhost/backend.php', callback, "word="+text+"&x="+e.clientX+"&y="+e.clientY);
       }
     });
   });
