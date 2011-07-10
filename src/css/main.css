@@ -6,13 +6,6 @@ html, body, .brian-map {
   position: absolute;
 }
 .brian-map-element {
-  display: inline-block;
+  display: inline;
   position: absolute;
-  border: 2px dashed #000;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
-}
-input[type=text] {
-  border: 1px;
 }
