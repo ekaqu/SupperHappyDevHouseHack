@@ -9,9 +9,8 @@ html, body, .brian-map {
   display: inline-block;
   position: absolute;
   border: 1px dashed #ccc;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 15px;
+  padding: 05px 10px;
+  border-radius: 05px;
 }
 input[type=text] {
   border: 0px;
