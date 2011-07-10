@@ -2,7 +2,7 @@
 mysql_connect("localhost", "mindmap", "wamad");
 mysql_select_db("mindmap");
 
-if($_GET["all"]) {
+if(isset($_GET["all"])) {
 	$query = "select * from word";
 	$result = mysql_query($query) or die($query);
 	
@@ -13,8 +13,8 @@ if($_GET["all"]) {
 
 	echo json_encode($out);
 }
-else if($_GET["from"]) {
-	$query = "select * from word where id > " + $_GET["from"];
+else if(isset($_GET["from"])) {
+	$query = "select * from word where id > " . $_GET["from"];
 	$result = mysql_query($query) or die($query);
 	
 	$out = array();
@@ -24,7 +24,7 @@ else if($_GET["from"]) {
 
 	echo json_encode($out);
 }
-else if($_POST["word"]) {
+else if(isset($_POST["word"])) {
 	$query = "insert into word (word, x, y) values ('".$_POST["word"]."', ".$_POST["x"].", ".$_POST["y"].")";
 	mysql_query($query);
   echo mysql_error();
