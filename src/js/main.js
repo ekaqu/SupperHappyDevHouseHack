@@ -9,7 +9,7 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
     child.on('keypress', function(press) {
       if(press.keyCode == 13) {
         var text = child.get('value');
-        map.append('<div class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px">'+text+'</div>');
+        // map.append('<div class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px">'+text+'</div>');
         child.remove();
 
           Y.log(Y.QueryString.stringify({
