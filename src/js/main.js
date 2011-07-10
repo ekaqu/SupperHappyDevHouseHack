@@ -3,6 +3,11 @@ YUI().use('node', function(Y) {
   map.on('click', function(e) {
     Y.log(e.clientX);
     Y.log(e.clientY);
-    map.append('<div class="brian-map-element" style="left: '+e.clientX+'px; top: '+e.clientY+'px">MOOO</div>');
+	var child = Y.Node.create('<div class="brian-map-element" class="textbox" style="left: '+e.clientX+'px; top: '+e.clientY+'px"><input type="text" /></div>');
+    //map.append('<div class="brian-map-element" class="textbox" style="left: '+e.clientX+'px; top: '+e.clientY+'px"><input type="text" /></div>');
+console.log(child);
+child.children.item(0).focus(true);
+    map.append(child);
+	
   });
 });
