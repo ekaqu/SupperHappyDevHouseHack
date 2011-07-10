@@ -28,6 +28,6 @@ else if($_POST["word"]) {
 	$query = "insert into word (word, x, y) values ('".$_POST["word"]."', ".$_POST["x"].", ".$_POST["y"].")";
 	mysql_query($query);
   echo mysql_error();
-	echo mysql_insert_id();;
+	echo mysql_insert_id();
 }
 ?>
