@@ -1,14 +1,19 @@
 /* Colors found at http://kuler.adobe.com/#themeID/1413138 */
 html, body, .brian-map {
-  height: 099%;
-  width: 099%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 body {
   background-color: #4B8A79;
 }
 .brian-map {
+  position: relative;
+  top: 1%;
   height: 098%;
-  width: 095%;
+  width: 098%;
   margin: auto;
   background-color: #D0D969;
   -moz-box-shadow: 1px 1px 15px #D4421F;
