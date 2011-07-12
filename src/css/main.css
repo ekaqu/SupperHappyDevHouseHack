@@ -1,11 +1,30 @@
+/* Colors found at http://kuler.adobe.com/#themeID/1413138 */
 html, body, .brian-map {
-  height: 100%;
-  width: 100%;
+  height: 099%;
+  width: 099%;
 }
-.brian-map{
-  position: absolute;
+body {
+  background-color: #4B8A79;
+}
+.brian-map {
+  height: 098%;
+  width: 095%;
+  margin: auto;
+  background-color: #D0D969;
+  -moz-box-shadow: 1px 1px 15px #D4421F;
+  -webkit-box-shadow: 1px 1px 15px #D4421F;
+  box-shadow: 1px 1px 15px #D4421F;
 }
 .brian-map-element {
-  display: inline;
+  display: inline-block;
   position: absolute;
+  padding: 05px 10px;
+  border-radius: 05px;
+  background-color: #F28C3E;
+  -moz-box-shadow: 5px 5px 5px #8C1E1D;
+  -webkit-box-shadow: 5px 5px 5px #8C1E1D;
+  box-shadow: 5px 5px 5px #8C1E1D;
+}
+input[type=text] {
+  border: 0px;
 }
