@@ -1,4 +1,4 @@
-YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', function(Y) {
+YUI().use('dd','json','node', 'io', 'querystring-stringify-simple', 'querystring', function(Y) {
   var map = Y.one('.brian-map');
 
   // when user clicks, add an input
@@ -41,8 +41,9 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
           var words = Y.JSON.parse(rsp.responseText);
           Y.each(words, function(word) {
             Y.log(word);
-            map.append('<div class="brian-map-element" style="left: '+word.x+'px; top: '+word.y+'px">'+word.word+'</div>');
+            map.append('<div class="brian-map-element" id="brian-map-id-'+word.id+'" style="left: '+word.x+'px; top: '+word.y+'px">'+word.word+'</div>');
             largestId = word.id;
+			dd[word.id] = new Y.DD.Drag() ({node: '#brian-map-id-'+word.id});
           });
           Y.log(largestId);
         }
