@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 YUI().use('dd','json','node', 'io', 'querystring-stringify-simple', 'querystring', function(Y) {
-  var map = Y.one('.brian-map');
-=======
-YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', function(Y) {
   var map = Y.one('.brian-map'),
     child, 
     largestId = 0;
->>>>>>> 989fedf48cbb8edcb9ed032fe255736b525f16e8
 
   // when user clicks, add an input
   map.on('click', function(e) {
@@ -55,13 +50,12 @@ YUI().use('json','node', 'io', 'querystring-stringify-simple', 'querystring', fu
             map.append('<div class="brian-map-element" id="brian-map-id-'+word.id+'" style="left: '+word.x+'px; top: '+word.y+'px">'+word.word+'</div>');
             insertElement(map,word.x,word.y,word.word);
             largestId = word.id;
-			dd[word.id] = new Y.DD.Drag() ({node: '#brian-map-id-'+word.id});
-          });
-          Y.log(largestId);
+            Y.log(largestId);
+          })
         }
       }
-    });
+    })}
+    reloadAll();
+    setInterval(reloadAll, 5000);
   }
-  reloadAll();
-  setInterval(reloadAll, 5000);
-});
+);
